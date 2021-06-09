@@ -1,0 +1,37 @@
+﻿<div ng-controller="TransactionCreateCtrl">
+    <div class="row" ng-init="init()">
+        <h2 class="text-center">Nueva transaccion</h2>
+    </div>
+
+    <div class="row">
+        <form>
+            <div class="form-group col-xs-12 col-md-6">
+                <label for="AccountOrigin">Cuenta Origen</label>
+                <select class="form-control"  ng-model="model.AccountOriginId" ng-options="client.AccountId as (client.Name + ' -- '+ client.AccountNro + ' -- ' + client.Bank) for client in clients">
+                    <option>Seleccione la cuenta</option>
+                </select>
+            </div>
+            <div class="form-group col-xs-12 col-md-6">
+                <label for="AccountDestinity">Cuenta Destino</label>
+                <select class="form-control" ng-model="model.AccountDestinityId" ng-options="client.AccountId as (client.Name + ' -- '+ client.AccountNro + ' -- ' + client.Bank) for client in clients">
+                    <option>Seleccione la cuenta</option>
+                </select>
+            </div>
+            <div class="form-group col-xs-12 col-md-6">
+                <label for="Value">Valor</label>
+                <input type="number" class="form-control" step="any" id="Value" ng-model="model.Value" name="Value" placeholder="Valor">
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <a class="btn btn-info" href="#/">
+                Volver
+            </a>
+            <button class="btn btn-primary" ng-click="save()">
+                Guardar
+            </button>
+        </div>
+    </div>
+</div>

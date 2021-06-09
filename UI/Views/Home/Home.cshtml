@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+
+<h2 class="text-center">Listado de transacciones</h2>
+<div class="row" ng-controller="mainCtrl">
+
+    <div class="table-responsive" ng-init="init()">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>FECHA</th>
+                    <th>CUENTA ORIGEN</th>
+                    <th>CUENTA DESTINO</th>
+                    <th>MONTO TRANSFERIDO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in transactions">
+                    <td>{{item.Date | date:"MM/dd/yyyy hh:mma"}}</td>
+                    <td>{{item.AccountOrigin}}</td>
+                    <td>{{item.AccountDestinity}}</td>
+                    <td>{{item.Value | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

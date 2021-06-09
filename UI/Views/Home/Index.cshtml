@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "App Finandina";
+}
+
+<!DOCTYPE html>
+<html ng-app="appFinandina">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Transactions BancoFinandina</title>
+    @Styles.Render("~/Content/bootstrap.min.css")
+    @Styles.Render("~/Content/sweetalert.min.css")
+    @Styles.Render("~/Content/Site.css")
+
+    @Scripts.Render("~/scripts/jquery-1.12.4.min.js")
+    @Scripts.Render("~/scripts/angular.min.js")
+    @Scripts.Render("~/scripts/angular-route.min.js")
+    @Scripts.Render("~/scripts/app.js")
+    @Scripts.Render("~/scripts/bootstrap.min.js")
+    @Scripts.Render("~/scripts/sweetalert.min.js")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#/" class="navbar-brand">Finandina</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/CreateTransaction/">Crear transaccion</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div ng-view class="container"></div>
+        <hr />
+    </div>
+    <footer class="text-center">
+        <p>&copy; @DateTime.Now.Year</p>
+    </footer>
+
+</body>
+</html>
+
+
+
